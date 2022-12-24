@@ -4,7 +4,7 @@ const Card = styled.div`
     width : 224px;
     height : 280px;
     border-radius: 10px;
-    background-color : #ffffff;
+    background-color : #eeeeee;
     display: flex;
     flex-direction: horizontal;
     margin-right : 21.5px;
@@ -14,6 +14,7 @@ const Card = styled.div`
     }
     border-radius: 10px;
     overflow:hidden;
+
 `
 ;
 

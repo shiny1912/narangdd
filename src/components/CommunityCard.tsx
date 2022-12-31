@@ -1,23 +1,37 @@
 import styled from "styled-components";
 import Tag from "./Tag";
+import colors from "../styles/colors";
+import fonts from "../styles/fonts";
 
 const Card = styled.div`
-    width : 224px;
+    flex-shrink: 0;
     height : 320px;
     border-radius: 10px;
     background-color : #EEEEEE;
-    
-    margin-right : 21.5px;
     position: relative;
+    box-sizing: border-box;
     &:last-child {
         margin-right: 0;
     }
-    border-radius: 10px;
     overflow:hidden;
     padding: 16px;
 
+    @media (min-width: 576px) { 
+        width : 327px;
+    } 
+    @media (min-width: 768px) { 
+        width : 327px;
+     } 
+    @media (min-width: 992px) { 
+        width : 224px;
+     } 
+    @media (min-width: 1200px) { 
+        width : 224px;
+     }
+
+    
 `
-;
+    ;
 
 const TagContainer = styled.div`
     display: flex;
@@ -25,10 +39,18 @@ const TagContainer = styled.div`
 `
 
 const CampCardContent = styled.div`
-    width: 224px;
     height: 127px;
+    .title {
+        ${fonts.Body1};
+        font-weight: bold;
+    }
+    .content {
+        ${fonts.Body1};
+
+    }
+    
 `
-;
+    ;
 
 const CommentIcon = styled.div`
     width:30px;
@@ -67,8 +89,8 @@ function CampCard() {
             <Tag tagText="취업고민"></Tag>
         </TagContainer>
         <CampCardContent>
-            <h4>합격 메일 답장 어떻게 할까요?</h4>
-            <h4>고칠 부분이 있는지 봐주시면 감사하겠습니다.</h4>
+            <div className="title"> 합격 메일 답장 어떻게 할까요?</div>
+            <div className="content">고칠 부분이 있는지 봐주시면 감사하겠습니다.</div>
             <CommentContainer>
                 <CommentIcon></CommentIcon>
                 <CommentTextContainer>

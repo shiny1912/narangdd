@@ -1,6 +1,7 @@
 import CampCard from "../components/CampCard";
 import styled from "styled-components";
 import CommunityCard from "../components/CommunityCard";
+import { Link } from "react-router-dom";
 
 const HomeContainer = styled.div`
     display: flex;
@@ -16,22 +17,39 @@ const UpperHome = styled.div`
     display: flex;
     flex-direction: column;
     align-items: center;
+    
+    @media (min-width: 576px) { 
+        text-align: center;
+    } 
+    @media (min-width: 768px) { 
+        text-align: center;
+     } 
+    
 `;
 
 const Container = styled.div`
-    width: 960px;
+    width: 100%;
     
-`
+    @media (min-width: 960px) { 
+        width: 960px;
+    } 
+`;
 
 const PopularCamp = styled.div`
     display: flex;
-    flex-direction : row;   
+    flex-direction : row;
+    justify-content: center;
+    gap: 21px; 
+    flex-wrap: wrap;  
 `
     ;
 
 const SalesCamp = styled.div`
     display: flex;
     flex-direction : row;   
+    justify-content: center;
+    gap: 21px;
+    flex-wrap: wrap; 
 `
     ;
 
@@ -73,7 +91,7 @@ function Home() {
         <Container>
             <h2>인기 부트 캠프</h2>
             <PopularCamp>
-                <CampCard></CampCard>
+                <Link to="/camp/detail"><CampCard></CampCard></Link>
                 <CampCard></CampCard>
                 <CampCard></CampCard>
                 <CampCard></CampCard>
@@ -101,7 +119,7 @@ function Home() {
                     <div>
                         대표: 모신영. <br /> 서울특별시 중구 한강대로 416, 서울스퀘어 15층 101호
 
-                        Copyright by (주)카페인. All right reserved.
+                        Copyright by (주)나랑뜨. All right reserved.
                         <br />이용약관  개인정보처리방침
                     </div>
                 </FooterContainer>
